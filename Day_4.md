@@ -4,7 +4,7 @@
 
 It is the science of making decisions
 
-Types: Descriptive and inferential
+Types: Descriptive and [inferential](https://datatab.net/tutorial/hypothesis)
 
 \*\* Inferential \-\> decision-making
 
