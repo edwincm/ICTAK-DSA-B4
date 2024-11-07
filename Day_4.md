@@ -57,6 +57,8 @@ Anything below LB or above UB are considered to be outliers
 
 \*\* Box plot shows all these data in a single place
 
+![](https://www.thedataschool.co.uk/content/images/2023/09/IQR-Illustration.png)
+
 # Qualifier
 
 Scatter plot give a graphical quantifier of relations
