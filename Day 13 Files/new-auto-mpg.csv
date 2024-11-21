@@ -1,0 +1,399 @@
+,mpg,car name
+0,18.0,chevrolet chevelle malibu
+1,15.0,buick skylark 320
+2,18.0,plymouth satellite
+3,16.0,amc rebel sst
+4,17.0,ford torino
+5,15.0,ford galaxie 500
+6,14.0,chevrolet impala
+7,14.0,plymouth fury iii
+8,14.0,pontiac catalina
+9,15.0,amc ambassador dpl
+10,15.0,dodge challenger se
+11,14.0,plymouth 'cuda 340
+12,15.0,chevrolet monte carlo
+13,14.0,buick estate wagon (sw)
+14,24.0,toyota corona mark ii
+15,22.0,plymouth duster
+16,18.0,amc hornet
+17,21.0,ford maverick
+18,27.0,datsun pl510
+19,26.0,volkswagen 1131 deluxe sedan
+20,25.0,peugeot 504
+21,24.0,audi 100 ls
+22,25.0,saab 99e
+23,26.0,bmw 2002
+24,21.0,amc gremlin
+25,10.0,ford f250
+26,10.0,chevy c20
+27,11.0,dodge d200
+28,9.0,hi 1200d
+29,27.0,datsun pl510
+30,28.0,chevrolet vega 2300
+31,25.0,toyota corona
+32,25.0,ford pinto
+33,19.0,amc gremlin
+34,16.0,plymouth satellite custom
+35,17.0,chevrolet chevelle malibu
+36,19.0,ford torino 500
+37,18.0,amc matador
+38,14.0,chevrolet impala
+39,14.0,pontiac catalina brougham
+40,14.0,ford galaxie 500
+41,14.0,plymouth fury iii
+42,12.0,dodge monaco (sw)
+43,13.0,ford country squire (sw)
+44,13.0,pontiac safari (sw)
+45,18.0,amc hornet sportabout (sw)
+46,22.0,chevrolet vega (sw)
+47,19.0,pontiac firebird
+48,18.0,ford mustang
+49,23.0,mercury capri 2000
+50,28.0,opel 1900
+51,30.0,peugeot 304
+52,30.0,fiat 124b
+53,31.0,toyota corolla 1200
+54,35.0,datsun 1200
+55,27.0,volkswagen model 111
+56,26.0,plymouth cricket
+57,24.0,toyota corona hardtop
+58,25.0,dodge colt hardtop
+59,23.0,volkswagen type 3
+60,20.0,chevrolet vega
+61,21.0,ford pinto runabout
+62,13.0,chevrolet impala
+63,14.0,pontiac catalina
+64,15.0,plymouth fury iii
+65,14.0,ford galaxie 500
+66,17.0,amc ambassador sst
+67,11.0,mercury marquis
+68,13.0,buick lesabre custom
+69,12.0,oldsmobile delta 88 royale
+70,13.0,chrysler newport royal
+71,19.0,mazda rx2 coupe
+72,15.0,amc matador (sw)
+73,13.0,chevrolet chevelle concours (sw)
+74,13.0,ford gran torino (sw)
+75,14.0,plymouth satellite custom (sw)
+76,18.0,volvo 145e (sw)
+77,22.0,volkswagen 411 (sw)
+78,21.0,peugeot 504 (sw)
+79,26.0,renault 12 (sw)
+80,22.0,ford pinto (sw)
+81,28.0,datsun 510 (sw)
+82,23.0,toyouta corona mark ii (sw)
+83,28.0,dodge colt (sw)
+84,27.0,toyota corolla 1600 (sw)
+85,13.0,buick century 350
+86,14.0,amc matador
+87,13.0,chevrolet malibu
+88,14.0,ford gran torino
+89,15.0,dodge coronet custom
+90,12.0,mercury marquis brougham
+91,13.0,chevrolet caprice classic
+92,13.0,ford ltd
+93,14.0,plymouth fury gran sedan
+94,13.0,chrysler new yorker brougham
+95,12.0,buick electra 225 custom
+96,13.0,amc ambassador brougham
+97,18.0,plymouth valiant
+98,16.0,chevrolet nova custom
+99,18.0,amc hornet
+100,18.0,ford maverick
+101,23.0,plymouth duster
+102,26.0,volkswagen super beetle
+103,11.0,chevrolet impala
+104,12.0,ford country
+105,13.0,plymouth custom suburb
+106,12.0,oldsmobile vista cruiser
+107,18.0,amc gremlin
+108,20.0,toyota carina
+109,21.0,chevrolet vega
+110,22.0,datsun 610
+111,18.0,maxda rx3
+112,19.0,ford pinto
+113,21.0,mercury capri v6
+114,26.0,fiat 124 sport coupe
+115,15.0,chevrolet monte carlo s
+116,16.0,pontiac grand prix
+117,29.0,fiat 128
+118,24.0,opel manta
+119,20.0,audi 100ls
+120,19.0,volvo 144ea
+121,15.0,dodge dart custom
+122,24.0,saab 99le
+123,20.0,toyota mark ii
+124,11.0,oldsmobile omega
+125,20.0,plymouth duster
+126,21.0,ford maverick
+127,19.0,amc hornet
+128,15.0,chevrolet nova
+129,31.0,datsun b210
+130,26.0,ford pinto
+131,32.0,toyota corolla 1200
+132,25.0,chevrolet vega
+133,16.0,chevrolet chevelle malibu classic
+134,16.0,amc matador
+135,18.0,plymouth satellite sebring
+136,16.0,ford gran torino
+137,13.0,buick century luxus (sw)
+138,14.0,dodge coronet custom (sw)
+139,14.0,ford gran torino (sw)
+140,14.0,amc matador (sw)
+141,29.0,audi fox
+142,26.0,volkswagen dasher
+143,26.0,opel manta
+144,31.0,toyota corona
+145,32.0,datsun 710
+146,28.0,dodge colt
+147,24.0,fiat 128
+148,26.0,fiat 124 tc
+149,24.0,honda civic
+150,26.0,subaru
+151,31.0,fiat x1.9
+152,19.0,plymouth valiant custom
+153,18.0,chevrolet nova
+154,15.0,mercury monarch
+155,15.0,ford maverick
+156,16.0,pontiac catalina
+157,15.0,chevrolet bel air
+158,16.0,plymouth grand fury
+159,14.0,ford ltd
+160,17.0,buick century
+161,16.0,chevroelt chevelle malibu
+162,15.0,amc matador
+163,18.0,plymouth fury
+164,21.0,buick skyhawk
+165,20.0,chevrolet monza 2+2
+166,13.0,ford mustang ii
+167,29.0,toyota corolla
+168,23.0,ford pinto
+169,20.0,amc gremlin
+170,23.0,pontiac astro
+171,24.0,toyota corona
+172,25.0,volkswagen dasher
+173,24.0,datsun 710
+174,18.0,ford pinto
+175,29.0,volkswagen rabbit
+176,19.0,amc pacer
+177,23.0,audi 100ls
+178,23.0,peugeot 504
+179,22.0,volvo 244dl
+180,25.0,saab 99le
+181,33.0,honda civic cvcc
+182,28.0,fiat 131
+183,25.0,opel 1900
+184,25.0,capri ii
+185,26.0,dodge colt
+186,27.0,renault 12tl
+187,17.5,chevrolet chevelle malibu classic
+188,16.0,dodge coronet brougham
+189,15.5,amc matador
+190,14.5,ford gran torino
+191,22.0,plymouth valiant
+192,22.0,chevrolet nova
+193,24.0,ford maverick
+194,22.5,amc hornet
+195,29.0,chevrolet chevette
+196,24.5,chevrolet woody
+197,29.0,vw rabbit
+198,33.0,honda civic
+199,20.0,dodge aspen se
+200,18.0,ford granada ghia
+201,18.5,pontiac ventura sj
+202,17.5,amc pacer d/l
+203,29.5,volkswagen rabbit
+204,32.0,datsun b-210
+205,28.0,toyota corolla
+206,26.5,ford pinto
+207,20.0,volvo 245
+208,13.0,plymouth volare premier v8
+209,19.0,peugeot 504
+210,19.0,toyota mark ii
+211,16.5,mercedes-benz 280s
+212,16.5,cadillac seville
+213,13.0,chevy c10
+214,13.0,ford f108
+215,13.0,dodge d100
+216,31.5,honda accord cvcc
+217,30.0,buick opel isuzu deluxe
+218,36.0,renault 5 gtl
+219,25.5,plymouth arrow gs
+220,33.5,datsun f-10 hatchback
+221,17.5,chevrolet caprice classic
+222,17.0,oldsmobile cutlass supreme
+223,15.5,dodge monaco brougham
+224,15.0,mercury cougar brougham
+225,17.5,chevrolet concours
+226,20.5,buick skylark
+227,19.0,plymouth volare custom
+228,18.5,ford granada
+229,16.0,pontiac grand prix lj
+230,15.5,chevrolet monte carlo landau
+231,15.5,chrysler cordoba
+232,16.0,ford thunderbird
+233,29.0,volkswagen rabbit custom
+234,24.5,pontiac sunbird coupe
+235,26.0,toyota corolla liftback
+236,25.5,ford mustang ii 2+2
+237,30.5,chevrolet chevette
+238,33.5,dodge colt m/m
+239,30.0,subaru dl
+240,30.5,volkswagen dasher
+241,22.0,datsun 810
+242,21.5,bmw 320i
+243,21.5,mazda rx-4
+244,43.1,volkswagen rabbit custom diesel
+245,36.1,ford fiesta
+246,32.8,mazda glc deluxe
+247,39.4,datsun b210 gx
+248,36.1,honda civic cvcc
+249,19.9,oldsmobile cutlass salon brougham
+250,19.4,dodge diplomat
+251,20.2,mercury monarch ghia
+252,19.2,pontiac phoenix lj
+253,20.5,chevrolet malibu
+254,20.2,ford fairmont (auto)
+255,25.1,ford fairmont (man)
+256,20.5,plymouth volare
+257,19.4,amc concord
+258,20.6,buick century special
+259,20.8,mercury zephyr
+260,18.6,dodge aspen
+261,18.1,amc concord d/l
+262,19.2,chevrolet monte carlo landau
+263,17.7,buick regal sport coupe (turbo)
+264,18.1,ford futura
+265,17.5,dodge magnum xe
+266,30.0,chevrolet chevette
+267,27.5,toyota corona
+268,27.2,datsun 510
+269,30.9,dodge omni
+270,21.1,toyota celica gt liftback
+271,23.2,plymouth sapporo
+272,23.8,oldsmobile starfire sx
+273,23.9,datsun 200-sx
+274,20.3,audi 5000
+275,17.0,volvo 264gl
+276,21.6,saab 99gle
+277,16.2,peugeot 604sl
+278,31.5,volkswagen scirocco
+279,29.5,honda accord lx
+280,21.5,pontiac lemans v6
+281,19.8,mercury zephyr 6
+282,22.3,ford fairmont 4
+283,20.2,amc concord dl 6
+284,20.6,dodge aspen 6
+285,17.0,chevrolet caprice classic
+286,17.6,ford ltd landau
+287,16.5,mercury grand marquis
+288,18.2,dodge st. regis
+289,16.9,buick estate wagon (sw)
+290,15.5,ford country squire (sw)
+291,19.2,chevrolet malibu classic (sw)
+292,18.5,chrysler lebaron town @ country (sw)
+293,31.9,vw rabbit custom
+294,34.1,maxda glc deluxe
+295,35.7,dodge colt hatchback custom
+296,27.4,amc spirit dl
+297,25.4,mercedes benz 300d
+298,23.0,cadillac eldorado
+299,27.2,peugeot 504
+300,23.9,oldsmobile cutlass salon brougham
+301,34.2,plymouth horizon
+302,34.5,plymouth horizon tc3
+303,31.8,datsun 210
+304,37.3,fiat strada custom
+305,28.4,buick skylark limited
+306,28.8,chevrolet citation
+307,26.8,oldsmobile omega brougham
+308,33.5,pontiac phoenix
+309,41.5,vw rabbit
+310,38.1,toyota corolla tercel
+311,32.1,chevrolet chevette
+312,37.2,datsun 310
+313,28.0,chevrolet citation
+314,26.4,ford fairmont
+315,24.3,amc concord
+316,19.1,dodge aspen
+317,34.3,audi 4000
+318,29.8,toyota corona liftback
+319,31.3,mazda 626
+320,37.0,datsun 510 hatchback
+321,32.2,toyota corolla
+322,46.6,mazda glc
+323,27.9,dodge colt
+324,40.8,datsun 210
+325,44.3,vw rabbit c (diesel)
+326,43.4,vw dasher (diesel)
+327,36.4,audi 5000s (diesel)
+328,30.0,mercedes-benz 240d
+329,44.6,honda civic 1500 gl
+330,40.9,renault lecar deluxe
+331,33.8,subaru dl
+332,29.8,vokswagen rabbit
+333,32.7,datsun 280-zx
+334,23.7,mazda rx-7 gs
+335,35.0,triumph tr7 coupe
+336,23.6,ford mustang cobra
+337,32.4,honda accord
+338,27.2,plymouth reliant
+339,26.6,buick skylark
+340,25.8,dodge aries wagon (sw)
+341,23.5,chevrolet citation
+342,30.0,plymouth reliant
+343,39.1,toyota starlet
+344,39.0,plymouth champ
+345,35.1,honda civic 1300
+346,32.3,subaru
+347,37.0,datsun 210 mpg
+348,37.7,toyota tercel
+349,34.1,mazda glc 4
+350,34.7,plymouth horizon 4
+351,34.4,ford escort 4w
+352,29.9,ford escort 2h
+353,33.0,volkswagen jetta
+354,34.5,renault 18i
+355,33.7,honda prelude
+356,32.4,toyota corolla
+357,32.9,datsun 200sx
+358,31.6,mazda 626
+359,28.1,peugeot 505s turbo diesel
+360,30.7,volvo diesel
+361,25.4,toyota cressida
+362,24.2,datsun 810 maxima
+363,22.4,buick century
+364,26.6,oldsmobile cutlass ls
+365,20.2,ford granada gl
+366,17.6,chrysler lebaron salon
+367,28.0,chevrolet cavalier
+368,27.0,chevrolet cavalier wagon
+369,34.0,chevrolet cavalier 2-door
+370,31.0,pontiac j2000 se hatchback
+371,29.0,dodge aries se
+372,27.0,pontiac phoenix
+373,24.0,ford fairmont futura
+374,23.0,amc concord dl
+375,36.0,volkswagen rabbit l
+376,37.0,mazda glc custom l
+377,31.0,mazda glc custom
+378,38.0,plymouth horizon miser
+379,36.0,mercury lynx l
+380,36.0,nissan stanza xe
+381,36.0,honda accord
+382,34.0,toyota corolla
+383,38.0,honda civic
+384,32.0,honda civic (auto)
+385,38.0,datsun 310 gx
+386,25.0,buick century limited
+387,38.0,oldsmobile cutlass ciera (diesel)
+388,26.0,chrysler lebaron medallion
+389,22.0,ford granada l
+390,32.0,toyota celica gt
+391,36.0,dodge charger 2.2
+392,27.0,chevrolet camaro
+393,27.0,ford mustang gl
+394,44.0,vw pickup
+395,32.0,dodge rampage
+396,28.0,ford ranger
+397,31.0,chevy s-10
