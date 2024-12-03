@@ -6,3 +6,4 @@
 - [Day 4 Notes](Day_4.md)
 - [Day 5 Notes](Day_5.md)
 - [Day 6 Notes](Day_6.md)
+- Latest Entry
