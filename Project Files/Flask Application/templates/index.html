@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Player Performance Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <h1>Football Player Performance Predictor</h1>
+    <div class="form-container">
+        <form id="prediction-form">
+            <div id="feature-inputs">
+                <!-- Input fields for 31 features -->
+                <div class="form-group">
+                    <label for="feature1">Potential:</label>
+                    <input type="number" id="feature1" name="Potential" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature2">Value (in million €):</label>
+                    <input type="number" id="feature2" name="Value" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature3">Wage (in million €):</label>
+                    <input type="number" id="feature3" name="Wage" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature4">Special:</label>
+                    <input type="number" id="feature4" name="Special" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature5">Preferred Foot:</label>
+                    <select id="feature5" name="Preferred Foot" required>
+                        <option value="0">Left</option>
+                        <option value="1">Right</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="feature6">International Reputation:</label>
+                    <input type="number" id="feature6" name="International Reputation" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature7">Weak Foot:</label>
+                    <input type="number" id="feature7" name="Weak Foot" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature8">Skill Moves:</label>
+                    <input type="number" id="feature8" name="Skill Moves" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature9">Body Type:</label>
+                    <select id="feature9" name="Body Type" required>
+                        <option value="0">Lean (170-)</option>
+                        <option value="1">Lean (170-185)</option>
+                        <option value="2">Lean (185+)</option>
+                        <option value="3">Normal (170-)</option>
+                        <option value="4">Normal (170-185)</option>
+                        <option value="5">Normal (185+)</option>
+                        <option value="6">Normal (190+)</option>
+                        <option value="7">Stocky (170-)</option>
+                        <option value="8">Stocky (170-185)</option>
+                        <option value="9">Stocky (185+)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="feature10">Heading Accuracy:</label>
+                    <input type="number" id="feature10" name="HeadingAccuracy" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature11">Sprint Speed:</label>
+                    <input type="number" id="feature11" name="SprintSpeed" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature12">Reactions:</label>
+                    <input type="number" id="feature12" name="Reactions" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature13">Balance:</label>
+                    <input type="number" id="feature13" name="Balance" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature14">Positioning:</label>
+                    <input type="number" id="feature14" name="Positioning" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature15">Composure:</label>
+                    <input type="number" id="feature15" name="Composure" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature16">Best Position:</label>
+                    <select id="feature16" name="Best Position" required>
+                        <option value="67.17635370094386">CAM</option>
+                        <option value="66.40143567090006">CB</option>
+                        <option value="67.33093525179856">CDM</option>
+                        <option value="68.61904761904762">CF</option>
+                        <option value="67.77534791252485">CM</option>
+                        <option value="64.47752808988764">GK</option>
+                        <option value="65.1544502617801">LB</option>
+                        <option value="65.98924731182795">LM</option>
+                        <option value="65.91735537190083">LW</option>
+                        <option value="68.0200668896321">LWB</option>
+                        <option value="65.29634002361276">RB</option>
+                        <option value="64.96722454672245">RM</option>
+                        <option value="66.21830985915493">RW</option>
+                        <option value="67.58445945945945">RWB</option>
+                        <option value="65.90210608424337">ST</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="feature17">Best Overall Rating:</label>
+                    <input type="number" id="feature17" name="Best Overall Rating" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature18">BMI:</label>
+                    <input type="number" id="feature18" name="BMI" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature19">Contract Length:</label>
+                    <input type="number" id="feature19" name="Contract Length" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature20">Total Passing:</label>
+                    <input type="number" id="feature20" name="Total Passing" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature21">Attacking Score:</label>
+                    <input type="number" id="feature21" name="Attacking Score" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature22">Defensive Score:</label>
+                    <input type="number" id="feature22" name="Defensive Score" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature23">Dribbling Control:</label>
+                    <input type="number" id="feature23" name="Dribbling Control" required>
+                </div>
+                <div class="form-group">
+                    <label>Work Rate:</label><br>
+                
+                    <input type="radio" id="work_rate_high_low" name="Work Rate" value="Work Rate_High/ Low" required>
+                    <label for="work_rate_high_low">High/Low</label><br>
+                
+                    <input type="radio" id="work_rate_high_medium" name="Work Rate" value="Work Rate_High/ Medium">
+                    <label for="work_rate_high_medium">High/Medium</label><br>
+                
+                    <input type="radio" id="work_rate_low_high" name="Work Rate" value="Work Rate_Low/ High">
+                    <label for="work_rate_low_high">Low/High</label><br>
+                
+                    <input type="radio" id="work_rate_low_low" name="Work Rate" value="Work Rate_Low/ Low">
+                    <label for="work_rate_low_low">Low/Low</label><br>
+                
+                    <input type="radio" id="work_rate_low_medium" name="Work Rate" value="Work Rate_Low/ Medium">
+                    <label for="work_rate_low_medium">Low/Medium</label><br>
+                
+                    <input type="radio" id="work_rate_medium_high" name="Work Rate" value="Work Rate_Medium/ High">
+                    <label for="work_rate_medium_high">Medium/High</label><br>
+                
+                    <input type="radio" id="work_rate_medium_low" name="Work Rate" value="Work Rate_Medium/ Low">
+                    <label for="work_rate_medium_low">Medium/Low</label><br>
+                
+                    <input type="radio" id="work_rate_medium_medium" name="Work Rate" value="Work Rate_Medium/ Medium">
+                    <label for="work_rate_medium_medium">Medium/Medium</label><br>
+                </div>
+                
+                <!-- Hidden inputs to store one-hot encoded values -->
+                <input type="hidden" id="feature24" name="Work Rate_High/ Low" value="0">
+                <input type="hidden" id="feature25" name="Work Rate_High/ Medium" value="0">
+                <input type="hidden" id="feature26" name="Work Rate_Low/ High" value="0">
+                <input type="hidden" id="feature27" name="Work Rate_Low/ Low" value="0">
+                <input type="hidden" id="feature28" name="Work Rate_Low/ Medium" value="0">
+                <input type="hidden" id="feature29" name="Work Rate_Medium/ High" value="0">
+                <input type="hidden" id="feature30" name="Work Rate_Medium/ Low" value="0">
+                <input type="hidden" id="feature31" name="Work Rate_Medium/ Medium" value="0">
+            </div>
+            <div class="form-group">
+                <button type="submit">Predict</button>
+            </div>
+        </form>
+
+        <div id="result" class="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        // Function to update hidden input values based on selection
+        function updateWorkRate(value) {
+            // Reset all hidden inputs to 0
+            document.getElementById('hidden_high_low').value = 0;
+            document.getElementById('hidden_high_medium').value = 0;
+            document.getElementById('hidden_low_high').value = 0;
+            document.getElementById('hidden_low_low').value = 0;
+            document.getElementById('hidden_low_medium').value = 0;
+            document.getElementById('hidden_medium_high').value = 0;
+            document.getElementById('hidden_medium_low').value = 0;
+            document.getElementById('hidden_medium_medium').value = 0;
+    
+            // Set the selected option's hidden input to 1
+            if (value === 'Work Rate_High/ Low') {
+                document.getElementById('hidden_high_low').value = 1;
+            } else if (value === 'Work Rate_High/ Medium') {
+                document.getElementById('hidden_high_medium').value = 1;
+            } else if (value === 'Work Rate_Low/ High') {
+                document.getElementById('hidden_low_high').value = 1;
+            } else if (value === 'Work Rate_Low/ Low') {
+                document.getElementById('hidden_low_low').value = 1;
+            } else if (value === 'Work Rate_Low/ Medium') {
+                document.getElementById('hidden_low_medium').value = 1;
+            } else if (value === 'Work Rate_Medium/ High') {
+                document.getElementById('hidden_medium_high').value = 1;
+            } else if (value === 'Work Rate_Medium/ Low') {
+                document.getElementById('hidden_medium_low').value = 1;
+            } else if (value === 'Work Rate_Medium/ Medium') {
+                document.getElementById('hidden_medium_medium').value = 1;
+            }
+        }
+    
+        // Add event listeners to all radio buttons
+        document.querySelectorAll('input[name="Work Rate"]').forEach((radio) => {
+            radio.addEventListener('change', (e) => updateWorkRate(e.target.value));
+        });
+    </script>
+
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById('prediction-form').addEventListener('submit', async function (e) {
+            e.preventDefault();  // Prevent form from refreshing the page
+            
+            // Gather feature values
+            const features = [];
+            for (let i = 1; i <= 31; i++) {  // Change to the correct number of features
+                features.push(parseFloat(document.getElementById(`feature${i}`).value));
+            }
+
+            // Send the data to the Flask API
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ features: features })
+            });
+
+            const result = await response.json();
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('result').innerText = `Predicted Overall Rating: ${result.prediction}`;
+        });
+    </script>
+</body>
+</html>
