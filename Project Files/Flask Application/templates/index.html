@@ -64,44 +64,62 @@
                 <!-- Input fields for 31 features -->
                 <div class="form-group">
                     <label for="feature1">Potential:</label>
-                    <input type="number" id="feature1" name="Potential" required>
+                    <input type="range" id="feature1" name="Potential" min="40" max="99" value="80" required oninput="this.nextElementSibling.value = this.value">
+                    <output>80</output>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature2">Value (in million €):</label>
-                    <input type="number" id="feature2" name="Value" step="0.01" required>
+                    <label for="feature2">Value (in millions):</label>
+                    <input type="range" id="feature2" name="Value" min="0" max="300" step="0.1" value="50" required oninput="this.nextElementSibling.value = this.value">
+                    <output>50</output>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature3">Wage (in million €):</label>
-                    <input type="number" id="feature3" name="Wage" step="0.01" required>
+                    <label for="feature3">Wage (in millions):</label>
+                    <input type="range" id="feature3" name="Wage" min="0" max="20" step="0.01" value="5" required oninput="this.nextElementSibling.value = this.value">
+                    <output>5</output>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature4">Special:</label>
-                    <input type="number" id="feature4" name="Special" required>
+                    <label for="feature4">Age:</label>
+                    <input type="range" id="feature4" name="Age" min="15" max="45" value="25" required oninput="this.nextElementSibling.value = this.value">
+                    <output>25</output>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature5">Preferred Foot:</label>
-                    <select id="feature5" name="Preferred Foot" required>
+                    <label for="feature5">Special:</label>
+                    <input type="range" id="feature5" name="Special" min="500" max="2500" value="1500" required oninput="this.nextElementSibling.value = this.value">
+                    <output>1500</output>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feature6">Preferred Foot:</label>
+                    <select id="feature6" name="Preferred Foot" required>
                         <option value="0">Left</option>
-                        <option value="1">Right</option>
+                        <option value="1" selected>Right</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature6">International Reputation:</label>
-                    <input type="number" id="feature6" name="International Reputation" required>
+                    <label for="feature7">International Reputation:</label>
+                    <input type="number" id="feature7" name="International Reputation" min="0" max="5" value="3" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature7">Weak Foot:</label>
-                    <input type="number" id="feature7" name="Weak Foot" required>
+                    <label for="feature8">Weak Foot:</label>
+                    <input type="number" id="feature8" name="Weak Foot" min="0" max="5" value="3" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature8">Skill Moves:</label>
-                    <input type="number" id="feature8" name="Skill Moves" required>
+                    <label for="feature9">Skill Moves:</label>
+                    <input type="number" id="feature9" name="Skill Moves" min="0" max="5" value="3" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature9">Body Type:</label>
-                    <select id="feature9" name="Body Type" required>
+                    <label for="feature10">Body Type:</label>
+                    <select id="feature10" name="Body Type" required>
                         <option value="0">Lean (170-)</option>
-                        <option value="1">Lean (170-185)</option>
+                        <option value="1" selected>Lean (170-185)</option>
                         <option value="2">Lean (185+)</option>
                         <option value="3">Normal (170-)</option>
                         <option value="4">Normal (170-185)</option>
@@ -112,38 +130,45 @@
                         <option value="9">Stocky (185+)</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature10">Heading Accuracy:</label>
-                    <input type="number" id="feature10" name="HeadingAccuracy" required>
+                    <label for="feature11">Heading Accuracy:</label>
+                    <input type="number" id="feature11" name="HeadingAccuracy" min="0" max="100" value="60" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature11">Sprint Speed:</label>
-                    <input type="number" id="feature11" name="SprintSpeed" required>
+                    <label for="feature12">Sprint Speed:</label>
+                    <input type="number" id="feature12" name="SprintSpeed" min="0" max="100" value="75" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature12">Reactions:</label>
-                    <input type="number" id="feature12" name="Reactions" required>
+                    <label for="feature13">Reactions:</label>
+                    <input type="number" id="feature13" name="Reactions" min="0" max="100" value="70" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature13">Balance:</label>
-                    <input type="number" id="feature13" name="Balance" required>
+                    <label for="feature14">Balance:</label>
+                    <input type="number" id="feature14" name="Balance" min="0" max="100" value="65" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature14">Positioning:</label>
-                    <input type="number" id="feature14" name="Positioning" required>
+                    <label for="feature15">Positioning:</label>
+                    <input type="number" id="feature15" name="Positioning" min="0" max="100" value="68" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature15">Composure:</label>
-                    <input type="number" id="feature15" name="Composure" required>
+                    <label for="feature16">Composure:</label>
+                    <input type="number" id="feature16" name="Composure" min="0" max="100" value="67" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature16">Best Position:</label>
-                    <select id="feature16" name="Best Position" required>
+                    <label for="feature17">Best Position:</label>
+                    <select id="feature17" name="Best Position" required>
                         <option value="67.17635370094386">CAM</option>
                         <option value="66.40143567090006">CB</option>
                         <option value="67.33093525179856">CDM</option>
                         <option value="68.61904761904762">CF</option>
-                        <option value="67.77534791252485">CM</option>
+                        <option value="67.77534791252485" selected>CM</option>
                         <option value="64.47752808988764">GK</option>
                         <option value="65.1544502617801">LB</option>
                         <option value="65.98924731182795">LM</option>
@@ -156,71 +181,51 @@
                         <option value="65.90210608424337">ST</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature17">Best Overall Rating:</label>
-                    <input type="number" id="feature17" name="Best Overall Rating" required>
+                    <label for="feature18">Best Overall Rating:</label>
+                    <input type="number" id="feature18" name="Best Overall Rating" min="0" max="100" value="70" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature18">BMI:</label>
-                    <input type="number" id="feature18" name="BMI" required>
+                    <label for="feature19">BMI:</label>
+                    <input type="number" id="feature19" name="BMI" min="18" max="35" value="23" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature19">Contract Length:</label>
-                    <input type="number" id="feature19" name="Contract Length" required>
+                    <label for="feature20">Contract Length:</label>
+                    <input type="number" id="feature20" name="Contract Length" min="0" max="50" value="5" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature20">Total Passing:</label>
-                    <input type="number" id="feature20" name="Total Passing" required>
+                    <label for="feature21">Total Passing:</label>
+                    <input type="number" id="feature21" name="Total Passing" min="0" max="200" value="100" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature21">Attacking Score:</label>
-                    <input type="number" id="feature21" name="Attacking Score" required>
+                    <label for="feature22">Attacking Score:</label>
+                    <input type="number" id="feature22" name="Attacking Score" min="0" max="100" value="75" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature22">Defensive Score:</label>
-                    <input type="number" id="feature22" name="Defensive Score" required>
+                    <label for="feature23">Defensive Score:</label>
+                    <input type="number" id="feature23" name="Defensive Score" min="0" max="100" value="60" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="feature23">Dribbling Control:</label>
-                    <input type="number" id="feature23" name="Dribbling Control" required>
-                </div>
-                <div class="form-group">
-                    <label>Work Rate:</label><br>
-                
-                    <input type="radio" id="work_rate_high_low" name="Work Rate" value="Work Rate_High/ Low" required>
-                    <label for="work_rate_high_low">High/Low</label><br>
-                
-                    <input type="radio" id="work_rate_high_medium" name="Work Rate" value="Work Rate_High/ Medium">
-                    <label for="work_rate_high_medium">High/Medium</label><br>
-                
-                    <input type="radio" id="work_rate_low_high" name="Work Rate" value="Work Rate_Low/ High">
-                    <label for="work_rate_low_high">Low/High</label><br>
-                
-                    <input type="radio" id="work_rate_low_low" name="Work Rate" value="Work Rate_Low/ Low">
-                    <label for="work_rate_low_low">Low/Low</label><br>
-                
-                    <input type="radio" id="work_rate_low_medium" name="Work Rate" value="Work Rate_Low/ Medium">
-                    <label for="work_rate_low_medium">Low/Medium</label><br>
-                
-                    <input type="radio" id="work_rate_medium_high" name="Work Rate" value="Work Rate_Medium/ High">
-                    <label for="work_rate_medium_high">Medium/High</label><br>
-                
-                    <input type="radio" id="work_rate_medium_low" name="Work Rate" value="Work Rate_Medium/ Low">
-                    <label for="work_rate_medium_low">Medium/Low</label><br>
-                
-                    <input type="radio" id="work_rate_medium_medium" name="Work Rate" value="Work Rate_Medium/ Medium">
-                    <label for="work_rate_medium_medium">Medium/Medium</label><br>
+                    <label for="feature24">Dribbling Control:</label>
+                    <input type="number" id="feature24" name="Dribbling Control" min="0" max="100" value="70" required>
                 </div>
                 
                 <!-- Hidden inputs to store one-hot encoded values -->
-                <input type="hidden" id="feature24" name="Work Rate_High/ Low" value="0">
-                <input type="hidden" id="feature25" name="Work Rate_High/ Medium" value="0">
-                <input type="hidden" id="feature26" name="Work Rate_Low/ High" value="0">
-                <input type="hidden" id="feature27" name="Work Rate_Low/ Low" value="0">
-                <input type="hidden" id="feature28" name="Work Rate_Low/ Medium" value="0">
-                <input type="hidden" id="feature29" name="Work Rate_Medium/ High" value="0">
-                <input type="hidden" id="feature30" name="Work Rate_Medium/ Low" value="0">
-                <input type="hidden" id="feature31" name="Work Rate_Medium/ Medium" value="0">
+                <input type="hidden" id="feature25" name="Work Rate_High/ Low" value="0">
+                <input type="hidden" id="feature26" name="Work Rate_High/ Medium" value="0">
+                <input type="hidden" id="feature27" name="Work Rate_Low/ High" value="0">
+                <input type="hidden" id="feature28" name="Work Rate_Low/ Low" value="0">
+                <input type="hidden" id="feature29" name="Work Rate_Low/ Medium" value="0">
+                <input type="hidden" id="feature30" name="Work Rate_Medium/ High" value="0">
+                <input type="hidden" id="feature31" name="Work Rate_Medium/ Low" value="0">
+                <input type="hidden" id="feature32" name="Work Rate_Medium/ Medium" value="0">
             </div>
             <div class="form-group">
                 <button type="submit">Predict</button>
