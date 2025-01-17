@@ -1,12 +1,64 @@
-from flask import Flask, request, jsonify
+# Create a virtual environment and install all dependencies using:
+# pip install -r requirements.txt
+
+# from flask import Flask, request, jsonify, render_template
+# from joblib import load
+# import numpy as np
+# import pandas as pd
+
+# # Load the saved model
+# model = load('static/best_rf_model.joblib')
+
+# app = Flask(__name__)
+
+# @app.route('/')
+# def home():
+#     return render_template('index.html')  # Render the HTML form
+
+# @app.route('/predict', methods=['POST'])
+# def predict():
+#     # API endpoint to predict 'Overall' rating based on input attributes
+#     try:
+#         data = request.get_json()  # Expecting JSON input
+#         features = np.array(data['features']).reshape(1, -1)  # Reshape for a single prediction
+
+#         # Validate input dimensions
+#         if features.shape[1] != model.n_features_in_:
+#             return jsonify({'error': f'Expected {model.n_features_in_} features, but got {features.shape[1]}'}), 400
+
+#         # Make the prediction using the loaded model
+#         prediction = model.predict(features)[0]  # Get the first element (since it's a single prediction)
+
+#         # Return the prediction as a JSON response
+#         response = {
+#             'prediction': prediction
+#         }
+#         return jsonify(response)
+    
+#     except Exception as e:
+#         return jsonify({'error': str(e)}), 500
+
+# # Run the Flask app
+# if __name__ == '__main__':
+#     app.run(debug=True)
+
+from flask import Flask, request, jsonify, render_template
 from joblib import load
 import numpy as np
-import pandas as pd
+import logging
+
+# Initialize the Flask app
+app = Flask(__name__)
 
 # Load the saved model
-model = load('best_rf_model.joblib')
+try:
+    model = load('static/best_rf_model.joblib')
+    model_features = model.n_features_in_  # Number of features expected by the model
+except Exception as e:
+    raise RuntimeError(f"Failed to load the model. Error: {str(e)}")
 
-app = Flask(__name__)
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 @app.route('/')
 def home():
@@ -14,25 +66,28 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    # API endpoint to predict 'Overall' rating based on input attributes
     try:
-        data = request.get_json()  # Expecting JSON input
-        features = np.array(data['features']).reshape(1, -1)  # Reshape for a single prediction
+        # Parse the JSON request
+        data = request.get_json()
+        if not data or 'features' not in data:
+            logging.error("Invalid input: Missing 'features' key in the request data.")
+            return jsonify({'error': "Invalid input: 'features' key is required."}), 400
 
-        # Validate input dimensions
-        if features.shape[1] != model.n_features_in_:
-            return jsonify({'error': f'Expected {model.n_features_in_} features, but got {features.shape[1]}'}), 400
+        # Validate and reshape the features
+        features = np.array(data['features'], dtype=float).reshape(1, -1)
+        if features.shape[1] != model_features:
+            logging.error(f"Feature count mismatch: Expected {model_features}, but got {features.shape[1]}.")
+            return jsonify({'error': f"Expected {model_features} features, but got {features.shape[1]}"}), 400
 
-        # Make the prediction using the loaded model
-        prediction = model.predict(features)[0]  # Get the first element (since it's a single prediction)
+        # Predict using the loaded model
+        prediction = model.predict(features)[0]
+        logging.info(f"Prediction successful. Features: {features}, Prediction: {prediction}")
 
-        # Return the prediction as a JSON response
-        response = {
-            'prediction': prediction
-        }
-        return jsonify(response)
-    
+        # Return the prediction as JSON
+        return jsonify({'prediction': prediction})
+
     except Exception as e:
+        logging.exception("An error occurred during prediction.")
         return jsonify({'error': str(e)}), 500
 
 # Run the Flask app

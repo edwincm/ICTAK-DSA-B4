@@ -9,18 +9,25 @@
             font-family: Arial, sans-serif;
             margin: 40px;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
         }
         h1 {
             text-align: center;
+            color: #333;
         }
         .form-container {
-            max-width: 600px;
+            max-width: 800px;
             margin: auto;
             padding: 20px;
             background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
         }
         .form-group {
             margin-bottom: 15px;
@@ -29,11 +36,14 @@
             display: block;
             margin-bottom: 5px;
         }
-        .form-group input {
+        .form-group input, .form-group select {
             width: 100%;
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
+        }
+        .form-group input[readonly] {
+            background-color: #e9ecef;
         }
         .form-group button {
             padding: 10px 20px;
@@ -60,173 +70,176 @@
     <h1>Football Player Performance Predictor</h1>
     <div class="form-container">
         <form id="prediction-form">
+            <!-- Inputs for the ordered features -->
             <div id="feature-inputs">
-                <!-- Input fields for 32 features -->
                 <div class="form-group">
-                    <label for="feature1">Potential:</label>
-                    <input type="range" id="feature1" name="Potential" min="40" max="99" value="80" required oninput="this.nextElementSibling.value = this.value">
+                    <label for="feature1">Age:</label>
+                    <input type="number" id="feature1" name="Age" min="15" max="45" value="25" required>
+                </div>
+                <div class="form-group">
+                    <label for="feature2">Potential:</label>
+                    <input type="range" id="feature2" name="Potential" min="40" max="99" value="80" required oninput="this.nextElementSibling.value = this.value">
                     <output>80</output>
                 </div>
-                
                 <div class="form-group">
-                    <label for="feature2">Value (in millions):</label>
-                    <input type="range" id="feature2" name="Value" min="0" max="300" step="0.1" value="50" required oninput="this.nextElementSibling.value = this.value">
-                    <output>50</output>
+                    <label for="feature3">Value (in millions):</label>
+                    <input type="number" id="feature3" name="Value" min="0" max="300" step="0.1" value="50" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="feature3">Wage (in millions):</label>
-                    <input type="range" id="feature3" name="Wage" min="0" max="20" step="0.01" value="5" required oninput="this.nextElementSibling.value = this.value">
-                    <output>5</output>
+                    <label for="feature4">International Reputation:</label>
+                    <input type="number" id="feature4" name="International_Reputation" min="1" max="5" value="3" required>
                 </div>
-                
-                <div class="form-group">
-                    <label for="feature4">Age:</label>
-                    <input type="range" id="feature4" name="Age" min="15" max="45" value="25" required oninput="this.nextElementSibling.value = this.value">
-                    <output>25</output>
+
+                <!-- Physical Attributes -->
+                <div class="form-section">
+                    <h3>Physical Attributes</h3>
+                    <div class="form-group">
+                        <label for="stamina">Stamina:</label>
+                        <input type="number" id="stamina" min="0" max="100" value="60" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="strength">Strength:</label>
+                        <input type="number" id="strength" min="0" max="100" value="70" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jumping">Jumping:</label>
+                        <input type="number" id="jumping" min="0" max="100" value="65" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="agility">Agility:</label>
+                        <input type="number" id="agility" min="0" max="100" value="70" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="feature5">Physical Score (Calculated):</label>
+                        <input type="number" id="feature5" name="Physical_Score" readonly>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="feature5">Special:</label>
-                    <input type="range" id="feature5" name="Special" min="500" max="2500" value="1500" required oninput="this.nextElementSibling.value = this.value">
-                    <output>1500</output>
+
+                <!-- Passing Attributes -->
+                <div class="form-section">
+                    <h3>Passing Attributes</h3>
+                    <div class="form-group">
+                        <label for="crossing">Crossing:</label>
+                        <input type="number" id="crossing" min="0" max="100" value="75" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="short_passing">Short Passing:</label>
+                        <input type="number" id="short_passing" min="0" max="100" value="80" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vision">Vision:</label>
+                        <input type="number" id="vision" min="0" max="100" value="70" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="feature6">Passing Score (Calculated):</label>
+                        <input type="number" id="feature6" name="Passing_Score" readonly>
+                    </div>
                 </div>
-                
+
+                <!-- Mental Attributes -->
+                <div class="form-section">
+                    <h3>Mental Attributes</h3>
+                    <div class="form-group">
+                        <label for="composure">Composure:</label>
+                        <input type="number" id="composure" min="0" max="100" value="65" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="interceptions">Interceptions:</label>
+                        <input type="number" id="interceptions" min="0" max="100" value="70" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reactions">Reactions:</label>
+                        <input type="number" id="reactions" min="0" max="100" value="75" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="feature7">Mental Score (Calculated):</label>
+                        <input type="number" id="feature7" name="Mental_Score" readonly>
+                    </div>
+                </div>
+
+                <!-- Shooting Attributes -->
+                <div class="form-section">
+                    <h3>Shooting Attributes</h3>
+                    <div class="form-group">
+                        <label for="shot_power">Shot Power:</label>
+                        <input type="number" id="shot_power" min="0" max="100" value="80" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="finishing">Finishing:</label>
+                        <input type="number" id="finishing" min="0" max="100" value="75" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="heading_accuracy">Heading Accuracy:</label>
+                        <input type="number" id="heading_accuracy" min="0" max="100" value="70" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="feature8">Shooting Score (Calculated):</label>
+                        <input type="number" id="feature8" name="Shooting_Score" readonly>
+                    </div>
+                </div>
+
+                <!-- Other Attributes -->
                 <div class="form-group">
-                    <label for="feature6">Preferred Foot:</label>
-                    <select id="feature6" name="Preferred Foot" required>
+                    <label for="feature9">Preferred Foot:</label>
+                    <select id="feature9" name="Preferred Foot" required>
                         <option value="0">Left</option>
                         <option value="1" selected>Right</option>
                     </select>
                 </div>
-                
                 <div class="form-group">
-                    <label for="feature7">International Reputation:</label>
-                    <input type="number" id="feature7" name="International Reputation" min="0" max="5" value="3" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature8">Weak Foot:</label>
-                    <input type="number" id="feature8" name="Weak Foot" min="0" max="5" value="3" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature9">Skill Moves:</label>
-                    <input type="number" id="feature9" name="Skill Moves" min="0" max="5" value="3" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature10">Body Type:</label>
-                    <select id="feature10" name="Body Type" required>
-                        <option value="0">Lean (170-)</option>
-                        <option value="1" selected>Lean (170-185)</option>
-                        <option value="2">Lean (185+)</option>
-                        <option value="3">Normal (170-)</option>
-                        <option value="4">Normal (170-185)</option>
-                        <option value="5">Normal (185+)</option>
-                        <option value="6">Normal (190+)</option>
-                        <option value="7">Stocky (170-)</option>
-                        <option value="8">Stocky (170-185)</option>
-                        <option value="9">Stocky (185+)</option>
+                    <label for="feature10">Attacking Work Rate:</label>
+                    <select id="feature10" name="Attacking_WR" required>
+                        <option value="1">Low</option>
+                        <option value="2">Medium</option>
+                        <option value="3">High</option>
                     </select>
                 </div>
-                
                 <div class="form-group">
-                    <label for="feature11">Heading Accuracy:</label>
-                    <input type="number" id="feature11" name="HeadingAccuracy" min="0" max="100" value="60" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature12">Sprint Speed:</label>
-                    <input type="number" id="feature12" name="SprintSpeed" min="0" max="100" value="75" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature13">Reactions:</label>
-                    <input type="number" id="feature13" name="Reactions" min="0" max="100" value="70" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature14">Balance:</label>
-                    <input type="number" id="feature14" name="Balance" min="0" max="100" value="65" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature15">Positioning:</label>
-                    <input type="number" id="feature15" name="Positioning" min="0" max="100" value="68" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature16">Composure:</label>
-                    <input type="number" id="feature16" name="Composure" min="0" max="100" value="67" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature17">Best Position:</label>
-                    <select id="feature17" name="Best Position" required>
-                        <option value="67.17635370094386">CAM</option>
-                        <option value="66.40143567090006">CB</option>
-                        <option value="67.33093525179856">CDM</option>
-                        <option value="68.61904761904762">CF</option>
-                        <option value="67.77534791252485" selected>CM</option>
-                        <option value="64.47752808988764">GK</option>
-                        <option value="65.1544502617801">LB</option>
-                        <option value="65.98924731182795">LM</option>
-                        <option value="65.91735537190083">LW</option>
-                        <option value="68.0200668896321">LWB</option>
-                        <option value="65.29634002361276">RB</option>
-                        <option value="64.96722454672245">RM</option>
-                        <option value="66.21830985915493">RW</option>
-                        <option value="67.58445945945945">RWB</option>
-                        <option value="65.90210608424337">ST</option>
+                    <label for="feature11">Defensive Work Rate:</label>
+                    <select id="feature11" name="Defensive_WR" required>
+                        <option value="1">Low</option>
+                        <option value="2">Medium</option>
+                        <option value="3">High</option>
                     </select>
                 </div>
-                
                 <div class="form-group">
-                    <label for="feature18">Best Overall Rating:</label>
-                    <input type="number" id="feature18" name="Best Overall Rating" min="0" max="100" value="70" required>
+                    <label for="feature12">Height Range:</label>
+                    <select id="feature12" name="Height_Range" required>
+                        <option value="1">170-</option>
+                        <option value="2">170-185</option>
+                        <option value="3">185+</option>
+                        <option value="4">190+</option>
+                    </select>
                 </div>
-                
-                <div class="form-group">
-                    <label for="feature19">BMI:</label>
-                    <input type="number" id="feature19" name="BMI" min="18" max="35" value="23" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature20">Contract Length:</label>
-                    <input type="number" id="feature20" name="Contract Length" min="0" max="50" value="5" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature21">Total Passing:</label>
-                    <input type="number" id="feature21" name="Total Passing" min="0" max="200" value="100" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature22">Attacking Score:</label>
-                    <input type="number" id="feature22" name="Attacking Score" min="0" max="100" value="75" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature23">Defensive Score:</label>
-                    <input type="number" id="feature23" name="Defensive Score" min="0" max="100" value="60" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="feature24">Dribbling Control:</label>
-                    <input type="number" id="feature24" name="Dribbling Control" min="0" max="100" value="70" required>
-                </div>
-                
-                <!-- Hidden inputs to store one-hot encoded values -->
-                <input type="hidden" id="feature25" name="Work Rate_High/ Low" value="0">
-                <input type="hidden" id="feature26" name="Work Rate_High/ Medium" value="0">
-                <input type="hidden" id="feature27" name="Work Rate_Low/ High" value="0">
-                <input type="hidden" id="feature28" name="Work Rate_Low/ Low" value="0">
-                <input type="hidden" id="feature29" name="Work Rate_Low/ Medium" value="0">
-                <input type="hidden" id="feature30" name="Work Rate_Medium/ High" value="0">
-                <input type="hidden" id="feature31" name="Work Rate_Medium/ Low" value="0">
-                <input type="hidden" id="feature32" name="Work Rate_Medium/ Medium" value="0">
             </div>
+
+            <!-- Position Attributes -->
+                <div class="form-group">
+                    <label for="position">Position:</label>
+                    <select id="position" name="Position" required onchange="updatePositionGroup()">
+                        <option value="Attacker">Attacker</option>
+                        <option value="Defender">Defender</option>
+                        <option value="Goalkeeper">Goalkeeper</option>
+                        <option value="Midfielder">Midfielder</option>
+                        <option value="Substitute">Substitute</option>
+                    </select>
+                    <input type="hidden" id="feature13" name="Position_Group_Defender" value="0">
+                    <input type="hidden" id="feature14" name="Position_Group_Goalkeeper" value="0">
+                    <input type="hidden" id="feature15" name="Position_Group_Midfielder" value="0">
+                    <input type="hidden" id="feature16" name="Position_Group_Substitute" value="0">
+                </div>
+
+                <!-- Build Type -->
+                <div class="form-group">
+                    <label for="build_type">Build Type:</label>
+                    <select id="build_type" name="Build_Type" required onchange="updateBuildType()">
+                        <option value="Lean">Lean</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Stocky">Stocky</option>
+                    </select>
+                    <input type="hidden" id="feature17" name="Build_Type_Normal" value="0">
+                    <input type="hidden" id="feature18" name="Build_Type_Stocky" value="0">
+                </div>
             <div class="form-group">
                 <button type="submit">Predict</button>
             </div>
@@ -236,65 +249,76 @@
     </div>
 
     <script>
-        // Function to update hidden input values based on selection
-        function updateWorkRate(value) {
-            // Reset all hidden inputs to 0
-            document.getElementById('hidden_high_low').value = 0;
-            document.getElementById('hidden_high_medium').value = 0;
-            document.getElementById('hidden_low_high').value = 0;
-            document.getElementById('hidden_low_low').value = 0;
-            document.getElementById('hidden_low_medium').value = 0;
-            document.getElementById('hidden_medium_high').value = 0;
-            document.getElementById('hidden_medium_low').value = 0;
-            document.getElementById('hidden_medium_medium').value = 0;
-    
-            // Set the selected option's hidden input to 1
-            if (value === 'Work Rate_High/ Low') {
-                document.getElementById('hidden_high_low').value = 1;
-            } else if (value === 'Work Rate_High/ Medium') {
-                document.getElementById('hidden_high_medium').value = 1;
-            } else if (value === 'Work Rate_Low/ High') {
-                document.getElementById('hidden_low_high').value = 1;
-            } else if (value === 'Work Rate_Low/ Low') {
-                document.getElementById('hidden_low_low').value = 1;
-            } else if (value === 'Work Rate_Low/ Medium') {
-                document.getElementById('hidden_low_medium').value = 1;
-            } else if (value === 'Work Rate_Medium/ High') {
-                document.getElementById('hidden_medium_high').value = 1;
-            } else if (value === 'Work Rate_Medium/ Low') {
-                document.getElementById('hidden_medium_low').value = 1;
-            } else if (value === 'Work Rate_Medium/ Medium') {
-                document.getElementById('hidden_medium_medium').value = 1;
-            }
+        // Update calculated fields dynamically
+        function calculateScores() {
+            const stamina = parseFloat(document.getElementById('stamina').value);
+            const strength = parseFloat(document.getElementById('strength').value);
+            const jumping = parseFloat(document.getElementById('jumping').value);
+            const agility = parseFloat(document.getElementById('agility').value);
+            document.getElementById('feature5').value = ((stamina + strength + jumping + agility) / 4).toFixed(2);
+
+            const crossing = parseFloat(document.getElementById('crossing').value);
+            const shortPassing = parseFloat(document.getElementById('short_passing').value);
+            const vision = parseFloat(document.getElementById('vision').value);
+            document.getElementById('feature6').value = ((crossing + shortPassing + vision) / 3).toFixed(2);
+
+            const composure = parseFloat(document.getElementById('composure').value);
+            const interceptions = parseFloat(document.getElementById('interceptions').value);
+            const reactions = parseFloat(document.getElementById('reactions').value);
+            document.getElementById('feature7').value = ((composure + interceptions + reactions) / 3).toFixed(2);
+
+            const shotPower = parseFloat(document.getElementById('shot_power').value);
+            const finishing = parseFloat(document.getElementById('finishing').value);
+            const headingAccuracy = parseFloat(document.getElementById('heading_accuracy').value);
+            document.getElementById('feature8').value = ((shotPower + finishing + headingAccuracy) / 3).toFixed(2);
         }
-    
-        // Add event listeners to all radio buttons
-        document.querySelectorAll('input[name="Work Rate"]').forEach((radio) => {
-            radio.addEventListener('change', (e) => updateWorkRate(e.target.value));
-        });
+
+        // Add event listeners to dynamically calculate scores
+        document.querySelectorAll('input[type="number"]').forEach(input => {
+            input.addEventListener('input', calculateScores);
+        });    
     </script>
 
     <script>
         // JavaScript to handle form submission
         document.getElementById('prediction-form').addEventListener('submit', async function (e) {
             e.preventDefault();  // Prevent form from refreshing the page
+
+            // Dynamically calculate the scores before submission
+            calculateScores();
             
             // Gather feature values
             const features = [];
-            for (let i = 1; i <= 31; i++) {  // Change to the correct number of features
-                features.push(parseFloat(document.getElementById(`feature${i}`).value));
+            for (let i = 1; i <= 18; i++) { // Adjust to the correct number of features
+                const featureValue = parseFloat(document.getElementById(`feature${i}`).value);
+                if (isNaN(featureValue)) {
+                    alert(`Feature ${i} is missing or invalid.`);
+                    return;
+                }
+                features.push(featureValue);
             }
 
             // Send the data to the Flask API
-            const response = await fetch('/predict', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ features: features })
-            });
-
-            const result = await response.json();
-            document.getElementById('result').style.display = 'block';
-            document.getElementById('result').innerText = `Predicted Overall Rating: ${result.prediction}`;
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ features }),
+                });
+    
+                if (!response.ok) {
+                    throw new Error('Failed to get prediction. Please try again.');
+                }
+    
+                const result = await response.json();
+                document.getElementById('result').style.display = 'block';
+                document.getElementById('result').innerText = `Predicted Overall Rating: ${result.prediction}`;
+            } catch (error) {
+                alert(error.message);
+            }
+            
+            // Initialize calculations on load
+            window.onload = calculateScores;
         });
     </script>
 </body>
